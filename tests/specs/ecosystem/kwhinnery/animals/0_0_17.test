@@ -1,0 +1,18 @@
+kwhinnery/animals/0.0.17
+-- deno.lock --
+{
+  "version": "3",
+  "remote": {}
+}
+
+===
+
+== FAST CHECK EMIT PASSED ==
+
+== TYPE CHECK FAILED ==
+-- stdout --
+
+-- stderr --
+error: Module not found "file://<tmpdir>/types/animal".
+    at file://<tmpdir>/types/mod.d.ts:1:15
+

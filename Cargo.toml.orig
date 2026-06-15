@@ -1,0 +1,81 @@
+[package]
+name = "deno_graph"
+version = "0.86.3"
+edition = "2021"
+description = "Module graph analysis for deno"
+homepage = "https://deno.land/"
+repository = "https://github.com/denoland/deno_graph"
+documentation = "https://docs.rs/deno_graph"
+authors = ["the Deno authors"]
+license = "MIT"
+
+[workspace]
+members = ["lib"]
+
+[workspace.dependencies]
+deno_unsync = { version = "0.4.0", default-features = false }
+
+[lib]
+name = "deno_graph"
+
+[package.metadata.docs.rs]
+all-features = true
+
+[features]
+default = ["fast_check", "ecosystem_test"]
+fast_check = ["symbols", "deno_ast/transpiling", "twox-hash"]
+symbols = ["deno_ast/transforms", "deno_ast/visit", "deno_ast/utils"]
+ecosystem_test = []
+
+[[test]]
+name = "specs"
+path = "tests/specs_test.rs"
+harness = false
+
+[[test]]
+name = "ecosystem"
+path = "tests/ecosystem_test.rs"
+harness = false
+
+[dependencies]
+anyhow = "1.0.43"
+async-trait = "0.1.68"
+data-url = "0.3.0"
+deno_ast = { version = "0.44.0", features = ["dep_analysis", "emit"] }
+deno_unsync.workspace = true
+deno_semver = "0.6.0"
+encoding_rs = "0.8.33"
+futures = "0.3.26"
+import_map = "0.20.0"
+indexmap = { version = "2", features = ["serde"] }
+log = "0.4.20"
+monch = "0.5.0"
+once_cell = "1.16.0"
+parking_lot = "0.12.0"
+regex = "1.10.2"
+serde = { version = "1.0.130", features = ["derive", "rc"] }
+serde_json = { version = "1.0.67", features = ["preserve_order"] }
+sha2 = "^0.10.0"
+thiserror = "2.0.3"
+twox-hash = { version = "1.6.3", optional = true }
+url = { version = "2.2.2", features = ["serde"] }
+wasm_dep_analyzer = "0.1.0"
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+deno_unsync = { workspace = true, features = ["tokio"] }
+
+[dev-dependencies]
+bincode = "1.3.3"
+file_test_runner = "0.7.0"
+pretty_assertions = "1.0.0"
+reqwest = { version = "0.12.4", default-features = false, features = ["http2", "charset", "rustls-tls-webpki-roots"] }
+tempfile = "3.4.0"
+tokio = { version = "1.10.1", features = ["macros", "rt-multi-thread", "sync"] }
+deno_terminal = "0.1.1"
+env_logger = "0.11.3"
+
+[profile.release]
+codegen-units = 1
+incremental = true
+lto = true
+opt-level = "z"

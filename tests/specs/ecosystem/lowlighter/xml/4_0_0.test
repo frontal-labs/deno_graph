@@ -1,0 +1,20 @@
+lowlighter/xml/4.0.0
+-- deno.lock --
+{
+  "version": "3",
+  "remote": {}
+}
+
+===
+
+== FAST CHECK EMIT PASSED ==
+
+== TYPE CHECK FAILED ==
+-- stdout --
+
+-- stderr --
+error: TS2694 [ERROR]: Namespace 'Deno' has no exported member 'SeekerSync'.
+} & Deno.SeekerSync;
+         ~~~~~~~~~~
+    at file://<tmpdir>/utils/types.ts:10:10
+
