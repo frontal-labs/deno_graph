@@ -147,3 +147,7 @@ make contribution easier.
 [Build status]: https://github.com/denoland/deno_graph/actions
 [Twitter badge]: https://twitter.com/intent/follow?screen_name=deno_land
 [Twitter handle]: https://img.shields.io/twitter/follow/deno_land.svg?style=social&label=Follow
+
+## Development
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for repository checks and pull request guidance.
