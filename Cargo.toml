@@ -53,6 +53,10 @@ name = "specs"
 path = "tests/specs_test.rs"
 harness = false
 
+[[test]]
+name = "public_api"
+path = "tests/public_api.rs"
+
 [dependencies.anyhow]
 version = "1.0.43"
 
