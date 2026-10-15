@@ -140,7 +140,7 @@ version = "0.1.0"
 version = "1.3.3"
 
 [dev-dependencies.deno_terminal]
-version = "0.1.1"
+version = "0.2.3"
 
 [dev-dependencies.env_logger]
 version = "0.11.3"
