@@ -87,7 +87,7 @@ version = "0.8.33"
 version = "0.3.26"
 
 [dependencies.import_map]
-version = "0.20.0"
+version = "0.25.0"
 
 [dependencies.indexmap]
 version = "2"
