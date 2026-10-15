@@ -120,7 +120,7 @@ version = "1.0.67"
 features = ["preserve_order"]
 
 [dependencies.sha2]
-version = "^0.10.0"
+version = "^0.11.0"
 
 [dependencies.thiserror]
 version = "2.0.3"
