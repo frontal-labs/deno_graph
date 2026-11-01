@@ -97,7 +97,7 @@ features = ["serde"]
 version = "0.4.20"
 
 [dependencies.monch]
-version = "0.5.0"
+version = "0.6.0"
 
 [dependencies.once_cell]
 version = "1.16.0"
